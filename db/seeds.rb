@@ -5,3 +5,45 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Source.destroy_all
+Article.destroy_all
+User.destroy_all
+Reading.destroy_all
+Like.destroy_all
+UserTopic.destroy_all
+Topic.destroy_all
+Tag.destroy_all
+ArticleTag.destroy_all
+
+tables = [:articles, :sources, :users, :readings, :likes, :user_topics, :topics, :tags, :article_tags]
+
+tables.each do |table|
+  ActiveRecord::Base.connection.reset_pk_sequence!(table)
+end
+
+sources = [{ name: 'The Washington Post', api_url: "www.placeholder.com" }, { name: 'The New York Times', api_url: "www.placeholder.com" }, { name: 'CNN', api_url: "www.placeholder.com" },
+{ name: 'Business Insider', api_url: "www.placeholder.com" }, { name: 'ESPN', api_url: "www.placeholder.com" }, { name: 'TechCrunch', api_url: "www.placeholder.com" }, { name: 'BBC', api_url: "www.placeholder.com" }, { name: 'The Huffington Post', api_url: "www.placeholder.com" },
+{ name: 'The Guardian', api_url: "www.placeholder.com" }, { name: 'CNET', api_url: "www.placeholder.com" }]
+
+sources.each do |source|
+  Source.create!(source)
+end
+
+articles = Article.create!([{ title: 'Trump Stress-Tested the Election System, and the Cracks Showed', author: 'Alexander Burns', content_preview: 'As President Trump’s efforts to overturn the 2020 election have steadily disintegrated, the country appears to have escaped a doomsday scenario in the campaign’s epilogue: Since Nov. 3, there have been no tanks in the streets or widespread civil unrest...', read_mins: 4, article_url: 'https://www.nytimes.com/2020/11/24/us/politics/election-trump-democracy.html', source_id: 2  },
+{ title: 'Covid-19 doesn’t care about the holidays. It’s more dangerous than ever.', author: 'Lucy Jones', content_preview: 'When the upcoming holidays inspire us to take more risks and let down our guard, we are not being resentful, stupid or selfish. We are being human. But covid-19 does not care that we perceive it to be less risky — it is more dangerous than ever.', read_mins: 9, article_url: 'https://www.washingtonpost.com/opinions/2020/11/24/covid-19-holiday-risk-dangerous/', source_id: 1 },
+{ title: 'Utah helicopter crew discovers mysterious metal monolith deep in the desert', author: 'Leah Asmelash', content_preview: "What started as routine wildlife assistance took an extraterrestrial turn for Utah's Department of Public Safety after officers stumbled upon a mysterious monolith in the middle of rural Utah.", read_mins: 14, article_url: 'https://www.cnn.com/style/article/utah-monolith-art-trnd/index.html', source_id: 3 },
+{ title: 'Stores are reducing Black Friday sales hours this year but experts says that could actually make shopping less safe', author: 'Mary Meisenzahl', content_preview: "The usual Black Friday experience of long lines on Thanksgiving and 3 a.m. store openings is sure to look different this year, as retailers roll out safety measures in-stores and move many sales online.", read_mins: 4, article_url: 'https://www.businessinsider.com/reduced-black-friday-hours-could-make-shopping-less-safe-2020-11', source_id: 4 },
+{ title: "Jay Bilas introduces The Bilastrator's 2020-21 College Basketball Opus", author: 'Jay Bilas', content_preview: "The 2019-20 college basketball season ended unceremoniously, and in unprecedented fashion, as a global pandemic started. Never before, not even during times of war or other catastrophe, has the NCAA tournament been canceled or otherwise not played.", read_mins: 25, article_url: 'https://www.espn.com/mens-college-basketball/insider/story/_/id/30371934/jay-bilas-introduces-bilastrator-2020-21-college-basketball-opus', source_id: 5 }])
+
+users = User.create!([{ email: "gennabartolucci@gmail.com", password:"Hello123", username: "gennalucci"  }, { email: "berlin.onumonu@gmail.com", password:"Hello123", username: "berlino"  }, { email: "romariosx202@hotmail.com", password:"Hello123", username: "romarios"  }])
+
+readings =
+likes =
+user_topics =
+
+topics = Topic.create!([{ name: "Technology" }, { name: "Sports" }, { name: "Politics" }, { name: "Business" }, { name: "Culture" }])
+
+tags = Tag.create!([{ name: "Programming", topic_id: 1 }, { name: "Start-ups", topic_id: 1 }, { name: "Basketball", topic_id: 2 }, { name: "Football", topic_id: 2 }, { name: "American", topic_id: 3 }, { name: "Covid-19", topic_id: 3 }, { name: "Retail", topic_id: 4 }, { name: "Economy", topic_id: 4 }, { name: "Books", topic_id: 5 }, { name: "Film", topic_id: 5 }])
+
+article_tags = ArticleTag.create!([{article_id: 1, tag_id: 5 }, {article_id: 2, tag_id: 6 }, {article_id: 3, tag_id: 6 }, {article_id: 4, tag_id: 7 }, {article_id: 5, tag_id: 3 }])
