@@ -24,6 +24,8 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initTopics } from "../components/init_topics.js";
+initTopics();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

@@ -1,0 +1,9 @@
+
+
+<ul id="topic-container">
+<% @topics.each do |topic| %>
+<li data-topic-id="<%= topic.id %>"><%= topic.name %></li>
+<% end %>
+</ul>
+
+<button id="btn-next">NEXT</button>

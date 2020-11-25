@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :articles, through: :readings
   has_many :readings, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :user_tags, dependent: :destroy
 end
