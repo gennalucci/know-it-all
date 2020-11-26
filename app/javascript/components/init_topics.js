@@ -21,7 +21,6 @@ const initTopics = () => {
         return element.dataset.elementId;
       });
 
-      console.log(selectedElements[0].dataset.element);
       if (selectedElements[0].dataset.element === "topic") {
         window.location.replace(`${url}/user_tags/new?elementIds=${elementIds.join(',')}`);
       } else {

@@ -6,10 +6,12 @@ class UserTagsController < ApplicationController
   end
 
   def create_tags
-    raise
-    user_tag = UserTag.new(user_tag_params)
-    user_tag.save
+    tag_ids = params[:elementIds].split(',')
+    tag_ids.each do |id|
+      UserTag.create!(user_id: current_user.id, tag_id: id.to_i)
+    end
 
+    raise
     # redirect_to user_tag_path(user_tag)
   end
 
