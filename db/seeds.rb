@@ -11,7 +11,7 @@ Article.destroy_all
 User.destroy_all
 Reading.destroy_all
 Like.destroy_all
-UserTopic.destroy_all
+UserTag.destroy_all
 Topic.destroy_all
 Tag.destroy_all
 ArticleTag.destroy_all
@@ -50,5 +50,8 @@ article_tags = ArticleTag.create!([{article_id: 1, tag_id: 5 }, {article_id: 2, 
 
 # For testing CNN articles
 
-Tag.create!([{ name: 'Companies', topic_id: 4 }, { name: 'International', topic_id: 4 }])
-UserTopic.create!(user_id: 1, topic_id: 4)
+tag_company = Tag.create!({ name: 'Companies', topic_id: 4 })
+tag_int = Tag.create!({ name: 'International', topic_id: 4 })
+
+UserTag.create!(tag: tag_company, user_id: 1 )
+UserTag.create!(tag: tag_int, user_id: 1 )

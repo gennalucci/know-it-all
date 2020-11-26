@@ -17,7 +17,7 @@ class CnnArticles
   def create_articles_from_rss_feed_url(rss_feed_url, user_max_read_mins, tag)
     xml = open(rss_feed_url)
     doc = Nokogiri::XML(xml)
-    items = doc.xpath('//item').first(10)
+    items = doc.xpath('//item').first(4)
     number_of_items = items.count
     number_of_items.times do |i|
       title =  doc.xpath("//item[#{i+1}]/title").text
