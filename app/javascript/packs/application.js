@@ -25,12 +25,14 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initTopics } from "../components/init_topics.js";
-initTopics();
+import { loadSlider } from "../components/slider.js";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initTopics();
+  loadSlider();
   // Call your functions here, e.g:
   // initSelect2();
 });

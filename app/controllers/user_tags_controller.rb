@@ -10,9 +10,7 @@ class UserTagsController < ApplicationController
     tag_ids.each do |id|
       UserTag.create!(user_id: current_user.id, tag_id: id.to_i)
     end
-
-    raise
-    # redirect_to user_tag_path(user_tag)
+    redirect_to time_path
   end
 
   def destroy

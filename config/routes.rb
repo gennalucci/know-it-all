@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   resources :user_tags, only: [ :new, :create, :destroy ]
   get '/user_tags/create', to: 'user_tags#create_tags'
+  get '/time', to: 'dashboards#time'
 end
