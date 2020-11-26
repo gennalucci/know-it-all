@@ -1,3 +1,9 @@
+// @media (min-width: 500px) and (max-width: 1000px) {
+//    .collapse {
+//        display: none !important;
+//    }
+// }
+
 .navbar-lewagon {
   display: flex;
   justify-content: center;
@@ -10,7 +16,7 @@
 
  .navbar-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
