@@ -1,28 +1,28 @@
 class UserTagsController < ApplicationController
   def new
     @user_tag = UserTag.new
-    topic_ids = params[:topicIds].split(',')
+    topic_ids = params[:elementIds].split(',')
     @topics = topic_ids.map { |id| Topic.find(id) }
-    raise
   end
 
-  def create
-    # user_topic = UserTopic.new(user_topic_params)
-    # user_topic.save
+  def create_tags
+    raise
+    user_tag = UserTag.new(user_tag_params)
+    user_tag.save
 
-    # redirect_to user_topic_path(user_topic)
+    # redirect_to user_tag_path(user_tag)
   end
 
   def destroy
-    user_topic = UserTopic.find(params[:id])
-    user_topic.destroy
+    user_tag = UserTag.find(params[:id])
+    user_tag.destroy
 
-    redirect_to user_topic_path
+    # redirect_to user_tag_path
   end
 
   private
 
-  def user_topic_params
-    params.require(:user_topic).permit(:topic_id, :user_id)
+  def user_tag_params
+    params.require(:user_tag).permit(:topic_id, :user_id)
   end
 end

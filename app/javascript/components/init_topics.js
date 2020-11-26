@@ -1,23 +1,32 @@
 const initTopics = () => {
-  const topicContainer = document.getElementById("topic-container");
-  if (topicContainer){
-    const topics = topicContainer.querySelectorAll("li");
+  const topicTagContainer = document.getElementById("topic-tag-container");
+
+  if (topicTagContainer){
+    const url = window.location.origin;
+    const elements = topicTagContainer.querySelectorAll("li");
+
     //Add event listeners to all LIs
-    topics.forEach(topic => {
-      topic.addEventListener("click", (e) =>{
-        topic.classList.toggle("selected");
-      } )
+    elements.forEach(element => {
+      element.addEventListener("click", (e) =>{
+        element.classList.toggle("selected");
+      })
     });
+
     //Add event listener to next button
     const nextButton = document.getElementById("btn-next");
     nextButton.addEventListener("click", (e) => {
-      const selectedTopics = topicContainer.querySelectorAll(".selected");
+      const selectedElements = topicTagContainer.querySelectorAll(".selected");
 
-      const topicIds = Array.from(selectedTopics).map(topic => {
-        return topic.dataset.topicId;
+      const elementIds = Array.from(selectedElements).map(element => {
+        return element.dataset.elementId;
       });
-      console.log(topicIds);
-      window.location.replace(`${window.location.orgin}/user_tags/new?topicIds=${topicIds.join(',')}`);
+
+      console.log(selectedElements[0].dataset.element);
+      if (selectedElements[0].dataset.element === "topic") {
+        window.location.replace(`${url}/user_tags/new?elementIds=${elementIds.join(',')}`);
+      } else {
+        window.location.replace(`${url}/user_tags/create?elementIds=${elementIds.join(',')}`);
+      }
     })
   }
 }
