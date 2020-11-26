@@ -11,7 +11,7 @@ Article.destroy_all
 User.destroy_all
 Reading.destroy_all
 Like.destroy_all
-UserTopic.destroy_all
+UserTag.destroy_all
 Topic.destroy_all
 Tag.destroy_all
 ArticleTag.destroy_all
@@ -38,12 +38,20 @@ articles = Article.create!([{ title: 'Trump Stress-Tested the Election System, a
 
 users = User.create!([{ email: "gennabartolucci@gmail.com", password:"Hello123", username: "gennalucci"  }, { email: "berlin.onumonu@gmail.com", password:"Hello123", username: "berlino"  }, { email: "romariosx202@hotmail.com", password:"Hello123", username: "romarios"  }])
 
-readings =
-likes =
-user_topics =
+# readings =
+# likes =
+# user_topics =
 
 topics = Topic.create!([{ name: "Technology" }, { name: "Sports" }, { name: "Politics" }, { name: "Business" }, { name: "Culture" }])
 
 tags = Tag.create!([{ name: "Programming", topic_id: 1 }, { name: "Start-ups", topic_id: 1 }, { name: "Basketball", topic_id: 2 }, { name: "Football", topic_id: 2 }, { name: "American", topic_id: 3 }, { name: "Covid-19", topic_id: 3 }, { name: "Retail", topic_id: 4 }, { name: "Economy", topic_id: 4 }, { name: "Books", topic_id: 5 }, { name: "Film", topic_id: 5 }])
 
 article_tags = ArticleTag.create!([{article_id: 1, tag_id: 5 }, {article_id: 2, tag_id: 6 }, {article_id: 3, tag_id: 6 }, {article_id: 4, tag_id: 7 }, {article_id: 5, tag_id: 3 }])
+
+# For testing CNN articles
+
+tag_company = Tag.create!({ name: 'Companies', topic_id: 4 })
+tag_int = Tag.create!({ name: 'International', topic_id: 4 })
+
+UserTag.create!(tag: tag_company, user_id: 1 )
+UserTag.create!(tag: tag_int, user_id: 1 )
