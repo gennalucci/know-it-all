@@ -1,11 +1,15 @@
 .button {
   background-color: black; /* Green */
-  border: 2px;
-  border-color: yellow;
-  color: yellow;
-  padding: 5px 10px;
+  border: 2px solid #F3DD11;
+  color: #F3DD11;
+  padding: 8px 13px;
   text-align: center;
   text-decoration: none;
-  // display: inline-block;
-  font-size: 12px;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.button:hover {
+  background-color: #F3DD11; /* Green */
+  color: black;
 }
