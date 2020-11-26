@@ -2,7 +2,6 @@ require 'open-uri'
 
 # Run anytime you want to seed the DB with articles for a user. Then you're ready to query the DB for the most recently created articles matching that user's read time and tags.
 
-
 class CnnArticles
 
   def initialize(user, user_max_read_mins)
@@ -36,7 +35,8 @@ class CnnArticles
         }
         # p article_hash
         if user_max_read_mins >= read_mins
-          article = Article.create(article_hash)
+          article =  Article.create(article_hash)
+
           if article.persisted?
             ArticleTag.create(tag: tag, article: article)
           end

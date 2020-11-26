@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/dashboard', to: 'dashboard#index', as: :dashboard
-  get '/settings', to: 'dashboard#settings'
-  get '/dashboard/:id', to: 'dashboard#show'
-  post 'likes/:id', to: "likes#create"
-  delete 'likes/:id', to: "likes#destroy"
-  get 'dashboard/likes', to: "dashboard#likes"
+  get '/settings', to: 'dashboard#settings', as: :settings
+  get '/dashboard/:id', to: 'dashboard#show', as: :article_show
+  post 'likes/:id', to: "likes#create", as: :like_article
+  delete 'likes/:id', to: "likes#destroy", as: :unlike_article
+  get 'dashboard/likes', to: "dashboard#likes", as: :user_likes
 end
