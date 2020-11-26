@@ -8,6 +8,11 @@ class DashboardsController < ApplicationController
   def show
   end
 
+  def setup
+    #display all topics
+    @topics = Topic.all
+  end
+
   def likes
   end
 end

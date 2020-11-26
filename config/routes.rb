@@ -6,13 +6,17 @@ Rails.application.routes.draw do
   get 'dashboards/show'
   get 'dashboards/likes'
   devise_for :users
-  root to: 'dashboard#index'
+  root to: 'dashboards#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '/dashboard', to: 'dashboard#index', as: :dashboard
-  get '/settings', to: 'dashboard#settings'
-  get '/dashboard/:id', to: 'dashboard#show'
+  get '/dashboards', to: 'dashboards#index', as: :dashboard
+  get '/settings', to: 'dashboards#settings'
+  get '/dashboards/:id', to: 'dashboards#show'
+  get '/setup', to: 'dashboards#setup'
   post 'likes/:id', to: "likes#create"
   delete 'likes/:id', to: "likes#destroy"
-  get 'dashboard/likes', to: "dashboard#likes"
+  get 'dashboards/likes', to: "dashboards#likes"
+
+  resources :user_tags, only: [ :new, :create, :destroy ]
+  get '/user_tags/create', to: 'user_tags#create_tags'
 end
