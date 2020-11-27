@@ -24,6 +24,7 @@ class CnnArticles
       content_preview = doc.xpath("//item[#{i+1}]/description").text
       content_preview_cleaned = Nokogiri::HTML(content_preview).text.strip.gsub("• ","").gsub("\n","")
       article_url = doc.xpath("//item[#{i+1}]/link").text
+      image_url = doc.xpath("//item[#{i+1}]/media:thumbnail").first.attributes["url"].value
       begin
         html = open(article_url)
         words_per_min = 200
@@ -31,7 +32,7 @@ class CnnArticles
         read_mins = article_doc.search(".zn-body__paragraph").text.split.count / words_per_min
 
         article_hash = {
-          title: title, content_preview: content_preview_cleaned, article_url: article_url, read_mins: read_mins, source: @source
+          title: title, content_preview: content_preview_cleaned, article_url: article_url, read_mins: read_mins, source: @source, image_url: image_url
         }
         # p article_hash
         if user_max_read_mins >= read_mins
@@ -53,6 +54,9 @@ class CnnArticles
       "Companies" => "http://rss.cnn.com/rss/money_news_companies.rss",
       "International" => "http://rss.cnn.com/rss/money_news_international.rss",
       "Financial" => "http://rss.cnn.com/rss/money_latest.rss",
+      "Health" => "http://rss.cnn.com/rss/cnn_health.rss",
+      "Entertainment" => "http://rss.cnn.com/rss/cnn_showbiz.rss",
+      "Travel" => "http://rss.cnn.com/rss/cnn_travel.rss",
     }
     # "http://rss.cnn.com/rss/money_topstories.rss",
     # "http://rss.cnn.com/rss/money_mostpopular.rss",
