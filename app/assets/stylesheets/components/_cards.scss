@@ -1,0 +1,46 @@
+.topics-container {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  margin-top: 8px;
+  background-color: red;
+}
+
+.card {
+  margin: 20px auto;
+  background-color: read;
+  width: 180px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.card .headline {
+  text-align: center-left;
+  font-family: sans-serif;
+  color: white;
+  font-size: 20px;
+  margin-top: 140px;
+  position: fixed;
+}
+
+.card .read-time {
+  text-align: top-left;
+  margin-left: 2px;
+  color: yellow;
+  font-size: 18px;
+  position: fixed;
+}
+
+.card .article_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card .article_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 10px;
+  object-fit: cover;
+}
