@@ -1,16 +1,17 @@
 <br>
 <br>
+<div class="container">
+<h2>Tags</h2>
 <br>
-
-<h2>New User Tag</h2>
-
   <ul id="topic-tag-container">
     <% @topics.each do |topic| %>
       <h4><%= topic.name %></h4>
         <% topic.tags.each do |tag| %>
           <li data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></li>
         <% end %>
+        <br>
     <% end %>
   </ul>
-
 <button id="btn-next">NEXT</button>
+</div>
+

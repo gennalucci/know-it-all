@@ -1,13 +1,16 @@
 <br>
 <br>
+<div class="container">
+<h2 class='ml-10'>Select your topics</h2>
 <br>
-<ul id="topic-tag-container">
-  <% @topics.each do |topic| %>
-    <li data-element-id="<%= topic.id %>" data-element="topic"><%= topic.name %></li>
-  <% end %>
-</ul>
+  <ul id="topic-tag-container">
+    <% @topics.each do |topic| %>
+      <li data-element-id="<%= topic.id %>" data-element="topic"><%= topic.name %></li>
+    <% end %>
+  </ul>
 
-<button id="btn-next">NEXT</button>
+  <button id="btn-next">NEXT</button>
+</div>
 
 <!-- <div id="topic-tag-container" class="container" style="margin: auto;">
   <% @topics.each do |topic| %>
