@@ -2,5 +2,6 @@
 <p>Find me in app/views/dashboards/index.html.erb</p>
 
 <% @articles.each do |article| %>
-  <p><%= article.attributes %></p>
+  <%= image_tag(article.image_url) %>
+  <p><%= article.attributes  %></p>
 <% end %>
