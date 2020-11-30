@@ -21,6 +21,8 @@ class DashboardsController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
+    @existing_like = Like.find_by(user: current_user, article: @article)
   end
 
   def setup
