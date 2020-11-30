@@ -1,17 +1,26 @@
-// .cards {
-// display: grid;
-// grid-template-columns: repeat(3, 1fr);
-// grid-auto-rows: auto;
-// grid-gap: 5px;
+.cards {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
-// }
 .card {
-  margin: 20px auto;
   background-color: black;
-  width: 180px;
   height: 200px;
   border-radius: 10px;
   position: relative;
+  flex: 0 0 46%;
+  margin: 7px;
+}
+
+.card .topic{
+  margin-left: 10px;
+  height: 5px;
+  font-family: 'Raleway';
+  color: #F3DD11;
+  font-size: 20px;
 }
 
 .card .headline {
@@ -19,7 +28,6 @@
   font-family: 'Raleway';
   color: white;
   font-size: 15px;
-  // margin-top: 140px;
   position: absolute;
   bottom: 0px;
   left: 1px;
@@ -43,16 +51,29 @@
 }
 
 .card .article_image img {
-  width: inherit;
+  width: 100%;
   height: inherit;
   border-radius: 10px;
   object-fit: cover;
 }
 
 .overlay {
-  width: 180px;
+  width: 100%;
   height: 202px;
-  background: black;
+  background: linear-gradient(#0002, black);
   opacity: .6;
   position: absolute;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
 }

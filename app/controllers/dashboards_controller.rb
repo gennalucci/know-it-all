@@ -3,7 +3,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     # seeds articles to database based on user's topic preferences
     # and max read time (currently 2nd argument in CnnArticles.new)
-    time = params[:time].to_i || 10
+    time = params[:time] || 10
     @articles = Article.joins(:tags).where("read_mins < ?", time)#.where(tags: {id: current_user.tags})
     # get all user's selected topics
     # @topics = @user.topics.all

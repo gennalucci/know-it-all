@@ -1,8 +1,15 @@
-<h2>Sign up</h2>
+<center><div class="registration">
+<div class="image">
+  <img src="https://pixy.org/src2/594/5942756.png">
+</div>
 
+</div>
+</center>
+<center> <h2><b>KNOW IT ALL</b></h2> </center>
+<center> <b>sign up</b> </center>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
+  <center> <div class="container">
   <div class="form-inputs">
     <%= f.input :email,
                 required: true,
@@ -21,5 +28,8 @@
     <%= f.button :submit, "Sign up", class: "button" %>
   </div>
 <% end %>
+</div>
+</center>
 
-<%= render "devise/shared/links" %>
+
+<center><%= render "devise/shared/links" %></center>

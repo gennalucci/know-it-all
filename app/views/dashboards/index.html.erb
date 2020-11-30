@@ -1,20 +1,24 @@
-
-<h1>Dashboard</h1>
+<h1>Dashboards</h1>
+<div class="headuh ml-2">
+  <p>politics</p>
+</div>
+<br>
 <div class="cards">
-  <% @articles.each do |article| %>
-     <div class="card">
-      <div class="article_image">
-          <%= image_tag(article.image_url) %>
-      </div>
-      <div class="overlay">
-      </div>
+  <% @articles[0..6].each do |article| %>
+    <% if article.image_url %>
+      <div class="card">
+        <div class="article_image">
+          <%= image_tag(article&.image_url) %>
+        </div>
+      <div class="overlay"></div>
         <div class="read-time">
             <p><%= article.read_mins  %>mins</p>
         </div>
           <div class="headline">
-              <%= article.title %>
+              <%= link_to "#{article.title}", article_show_path(article)%>
           </div>
       </div>
+    <%end%>
+  <%end%>
+  <center> <p style="color:#F3DD11">see more</p> </center>
 </div>
-<% end %>
-
