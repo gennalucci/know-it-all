@@ -1,8 +1,9 @@
 const buildHtml = ((element, tagContainer) => {
+  // console.log(element.innerText);
   const tagId = element.dataset.elementId;
-  const newButton = `<button class="tag-button topic-tag-button" data-element-id="${tagId}" data-element="tag">${element.innerText}</button>`;
-  console.log(element.innerText);
+  const newButton = `<button class="tag-button selected-tag topic-tag-button" data-element-id="${tagId}" data-element="tag">${element.innerText}</button>`;
   tagContainer.insertAdjacentHTML('beforeend', newButton);
+  element.classList.add("tag-hidden");
 });
 
 const selectTags = (wrappers) => {
@@ -16,7 +17,7 @@ const selectTags = (wrappers) => {
     buttons.forEach((button) => {
       button.addEventListener('click', (e) => {
         const element = e.currentTarget;
-        element.classList.toggle("selected");
+        // element.classList.toggle("selected");
         buildHtml(element, tagContainer[0]);
       });
     });
@@ -33,13 +34,15 @@ const initTopics = () => {
     const wrappers = document.querySelectorAll("[data-topic-wrapper]");
     selectTags(wrappers);
 
-    //query select the selected-tags container and store into variable
-    const tagContainers = topicTagContainer.querySelectorAll(".selected-tags");
+    // const tagContainers = topicTagContainer.querySelectorAll(".selected-tags");
 
     //Add event listener to next button
     const nextButton = document.getElementById("btn-next");
     nextButton.addEventListener("click", (e) => {
-      const selectedElements = topicTagContainer.querySelectorAll(".selected");
+      const selectedElements = topicTagContainer.querySelectorAll(".selected-tag");
+      console.log(selectedElements);
+
+
 
       const elementIds = Array.from(selectedElements).map(element => {
         return element.dataset.elementId;
