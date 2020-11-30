@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get 'dashboards/likes', to: "dashboards#likes", as: :user_likes
   get '/dashboards/:id', to: 'dashboards#show', as: :article_show
   get '/setup', to: 'dashboards#setup', as: :setup
-  post 'likes/:id', to: "likes#create", as: :like_article
-  delete 'likes/:id', to: "likes#destroy", as: :unlike_article
+  post '/dashboards/:id/like', to: "likes#create", as: :like_article
+  delete '/dashboards/:id/unlike', to: "likes#destroy", as: :unlike_article
 
   resources :user_tags, only: [ :new, :create, :destroy ]
   get '/user_tags/create', to: 'user_tags#create_tags'
