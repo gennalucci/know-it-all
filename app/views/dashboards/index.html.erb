@@ -1,11 +1,20 @@
-<br>
-<br>
-<div class="container">
-  <h3>Articles</h3>
-  <br>
+
+<h1>Dashboard</h1>
+<div class="cards">
   <% @articles.each do |article| %>
-    <%= image_tag(article.image_url) %>
-    <p><%= article.attributes %></p>
-    <br>
-  <% end %>
+     <div class="card">
+      <div class="article_image">
+          <%= image_tag(article.image_url) %>
+      </div>
+      <div class="overlay">
+      </div>
+        <div class="read-time">
+            <p><%= article.read_mins  %>mins</p>
+        </div>
+          <div class="headline">
+              <%= article.title %>
+          </div>
+      </div>
 </div>
+<% end %>
+
