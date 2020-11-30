@@ -1,0 +1,33 @@
+<div class="show-card">
+  <div class="show-card-image">
+    <img src="<%= @article.image_url %>">
+  </div>
+    <div class="show-card-content">
+      <div class="show-card-header">
+        <p> __________________________ </p>
+      </div>
+      <div class="show-card-headline">
+        <p><%= @article.title %></p>
+        <p><% if @existing_like %>
+          <%= link_to "   ❤️",  unlike_article_path(@article), method: :delete, class: "btn-likes" %>
+        <% else %>
+          <%= link_to "   🤍", like_article_path(@article), method: :post, class: "btn-likes" %>
+        <% end %>
+        <span id="likes-count"><%= @article.likes.count %></span>
+        </p>
+        </div>
+        <div class="show-card-sources">
+        <p>Source: <%= @article.source.name %></p>
+      </div>
+      <br>
+        <div class="show-card-description">
+          <p><%= @article.content_preview  %></p>
+        </div>
+         <div class="show-card-button">
+          <p> <%= link_to "Read the full article", @article.article_url, target: :_blank %> </p>
+        </div>
+
+      </div>
+    </div>
+
+
