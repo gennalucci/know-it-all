@@ -1,21 +1,18 @@
 <br>
 <br>
+  <h3><center>select your topics</center></h3>
+  <br>
+  <div class="container">
+    <div id="topic-tag-container" class="d-flex flex-wrap justify-content-center">
+      <% @topics.each do |topic| %>
+        <button class="topic-button topic-tag-button" data-element-id="<%= topic.id %>" data-element="topic"><%= topic.name %></button>
+      <% end %>
+    </div>
+    <br>
+    <br>
+      <button class="button" id="btn-next">next</button>
+  </div>
 <br>
-<ul id="topic-tag-container">
-  <% @topics.each do |topic| %>
-    <li data-element-id="<%= topic.id %>" data-element="topic"><%= topic.name %></li>
-  <% end %>
-</ul>
-
-<button id="btn-next">NEXT</button>
-
-<!-- <div id="topic-tag-container" class="container" style="margin: auto;">
-  <% @topics.each do |topic| %>
-    <button class="button" data-element-id="<%= topic.id %>" data-element="topic"><%= topic.name %></button>
-  <% end %>
-  <br>
-  <br>
-  <br>
-  <button id="btn-next">NEXT</button>
-</div> -->
-
+<br>
+<br>
+<br>

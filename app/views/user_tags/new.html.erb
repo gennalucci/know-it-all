@@ -1,16 +1,33 @@
 <br>
 <br>
 <br>
+<div class = "container">
+    <div class="d-flex justify-content-center">
+      <div id="topic-tag-container">
+        <h3>choose tags</h3>
+        <br>
 
-<h2>New User Tag</h2>
+        <% @topics.each do |topic| %>
+          <h4><%= topic.name %></h4>
+          <br>
+          <div data-topic-wrapper="<%= topic.name %>">
+            <% topic.tags.each do |tag| %>
+              <button class="tag-button topic-tag-button" data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></button>
+            <% end %>
 
-  <ul id="topic-tag-container">
-    <% @topics.each do |topic| %>
-      <h4><%= topic.name %></h4>
-        <% topic.tags.each do |tag| %>
-          <li data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></li>
+            <div class="selected-tags" data-topic-tags="<%= topic.name %>"></div>
+          </div>
+
+          <br>
+          <br>
         <% end %>
-    <% end %>
-  </ul>
 
-<button id="btn-next">NEXT</button>
+        <br>
+      </div>
+    </div>
+    <br>
+  <button class="button btn" id="btn-next">next</button>
+</div>
+<br>
+<br>
+<br>

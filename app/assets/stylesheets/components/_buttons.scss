@@ -1,6 +1,4 @@
 .button {
-  // width: 200px;
-  // height: 200px;
   background-color: black; /* Green */
   border: 2px solid #F3DD11;
   color: #F3DD11;
@@ -24,4 +22,57 @@
 .button:hover {
   background-color: #F3DD11; /* Green */
   color: black;
+}
+
+.topic-button {
+  width: 20vw;
+  height: 20vw;
+  background-color: black; /* Green */
+  border: 2px solid #F3DD11;
+  color: #F3DD11;
+  padding: 8px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.topic-button:hover {
+  background-color: #F3DD11; /* Green */
+  color: black;
+}
+
+
+.tag-button {
+  width: 24vw;
+  height: 8vw;
+  background-color: black; /* Green */
+  border: 2px solid #F3DD11;
+  color: #F3DD11;
+  padding: 8px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.selected-tags {
+  width: auto;
+  height: 200px;
+  border: 1px solid #F3DD11;
+  background-color: black;
+}
+
+.tag-button:hover {
+  background-color: #F3DD11; /* Green */
+  color: black;
+}
+
+#btn-next {
+  background-color: #f3dd11; /* Green */
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
 }

@@ -15,9 +15,9 @@ class UserTagsController < ApplicationController
 
   def destroy
     user_tag = UserTag.find(params[:id])
-    user_tag.destroy
+    user_tag.destroy!
 
-    # redirect_to user_tag_path
+    redirect_to request.referrer
   end
 
   private
