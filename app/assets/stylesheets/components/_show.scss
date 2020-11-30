@@ -22,25 +22,29 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    background: yellow;
+    background: black;
+    border: 1px solid #F3DD11;
+    left: 5px;
+    right: 5px;
+    top: 5px;
   }
   .show-card-header {
     margin-left: 10px;
     height: 1px;
     font-family: 'abril fatface';
-    color: black;
+    color: #F3DD11;
     font-size: 20px;
   }
   .show-card-headline {
     font-family: 'Abril Fatface';
     font-size: 23px;
-    color: black;
+    color: white;
   }
 
   .show-card-sources {
     font-family: 'Raleway';
     font-size: 18px;
-    color: black;
+    color: #F3DD11;
     margin-top: -40px;
 
   }
@@ -49,8 +53,15 @@
     position: center;
     font-family: 'Raleway';
     font-size: 18px;
-    color: black;
+    color: white;
     margin-top: -70px;
   }
 }
+  .headuh {
+    align-content: center-left;
+    height: 15px;
+    width: 30px;
+    color: #F3DD11;
+    font-size: 20px;
+  }
 
