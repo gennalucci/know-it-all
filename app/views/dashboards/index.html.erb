@@ -1,7 +1,18 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
-
-<% @articles.each do |article| %>
-  <%= image_tag(article.image_url) %>
-  <p><%= article.attributes  %></p>
+<h1>Dashboard</h1>
+<div class="cards">
+  <% @articles.each do |article| %>
+     <div class="card">
+      <div class="article_image">
+          <%= image_tag(article.image_url) %>
+      </div>
+      <div class="overlay">
+      </div>
+        <div class="read-time">
+            <p><%= article.read_mins  %>mins</p>
+        </div>
+          <div class="headline">
+              <%= article.title %>
+          </div>
+      </div>
+</div>
 <% end %>
