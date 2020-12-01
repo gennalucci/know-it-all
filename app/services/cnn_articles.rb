@@ -1,9 +1,6 @@
 require 'open-uri'
-
 # Run anytime you want to seed the DB with articles for a user. Then you're ready to query the DB for the most recently created articles matching that user's read time and tags.
-
 class CnnArticles
-
   def initialize
     @source = Source.find_by_name("CNN")
     Tag.all.each do |tag|
@@ -32,11 +29,11 @@ class CnnArticles
         article_doc = Nokogiri::HTML(html)
         image_url = article_doc.search("meta[property='og:image']").first&.attributes&.[]("content")&.value
         read_mins = article_doc.search(".zn-body__paragraph").text.split.count / words_per_min
-
         article_hash = {
           title: title, content_preview: content_preview_cleaned, article_url: article_url, read_mins: read_mins, source: @source, image_url: image_url
         }
         # p article_hash
+        
         article =  Article.create(article_hash)
 
         if article.persisted?
@@ -77,6 +74,5 @@ class CnnArticles
     # "http://rss.cnn.com/rss/money_realestate.rss",
     # "http://rss.cnn.com/rss/money_luxury.rss",
     # "http://rss.cnn.com/rss/money_smbusiness.rss"
-
   end
 end
