@@ -1,34 +1,46 @@
-.topics-container {
+.cards {
   display: flex;
-  align-items: flex-start;
-  align-content: center;
-  margin-top: 8px;
-  background-color: red;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {
-  margin: 20px auto;
-  background-color: read;
-  width: 180px;
+  background-color: black;
   height: 200px;
   border-radius: 10px;
+  position: relative;
+  flex: 0 0 46%;
+  margin: 7px;
+}
+
+.card .topic{
+  margin-left: 10px;
+  height: 5px;
+  font-family: 'Raleway';
+  color: #F3DD11;
+  font-size: 20px;
 }
 
 .card .headline {
   text-align: center-left;
-  font-family: sans-serif;
+  font-family: 'Raleway';
   color: white;
-  font-size: 20px;
-  margin-top: 140px;
-  position: fixed;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0px;
+  left: 1px;
+  right: 1px;
 }
 
 .card .read-time {
-  text-align: top-left;
-  margin-left: 2px;
+  font-family: 'Raleway';
   color: yellow;
-  font-size: 18px;
-  position: fixed;
+  font-size: 15px;
+  position: absolute;
+  top: 0px;
+  left: 2px;
 }
 
 .card .article_image {
@@ -39,8 +51,29 @@
 }
 
 .card .article_image img {
-  width: inherit;
+  width: 100%;
   height: inherit;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.overlay {
+  width: 100%;
+  height: 202px;
+  background: linear-gradient(#0002, black);
+  opacity: .6;
+  position: absolute;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
 }

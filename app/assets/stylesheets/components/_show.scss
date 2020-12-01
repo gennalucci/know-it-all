@@ -1,0 +1,67 @@
+
+.show-card {
+  height: 100%;
+  width: 100%;
+
+  .show-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .show-card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+
+  .show-card-content {
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background: black;
+    border: 1px solid #F3DD11;
+    left: 5px;
+    right: 5px;
+    top: 5px;
+  }
+  .show-card-header {
+    margin-left: 10px;
+    height: 1px;
+    font-family: 'abril fatface';
+    color: #F3DD11;
+    font-size: 20px;
+  }
+  .show-card-headline {
+    font-family: 'Abril Fatface';
+    font-size: 23px;
+    color: white;
+  }
+
+  .show-card-sources {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #F3DD11;
+    margin-top: -40px;
+
+  }
+
+  .show-card-description {
+    position: center;
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: white;
+    margin-top: -70px;
+  }
+}
+  .headuh {
+    align-content: center-left;
+    height: 15px;
+    width: 30px;
+    color: #F3DD11;
+    font-size: 20px;
+  }
+

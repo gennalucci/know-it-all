@@ -1,6 +1,14 @@
-<h2>Log in</h2>
+<center><div class="registration">
+<div class="image">
+  <img src="https://pixy.org/src2/594/5942756.png">
+</div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+</div>
+</center>
+<center> <h2><b>KNOW IT ALL</b></h2> </center>
+
+<center> <div class="container">
+ <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
                 required: false,
@@ -13,9 +21,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "button"%>
-
+    <%= f.button :submit, "Log in", class: "button" %>
   </div>
 <% end %>
+</div>
+</center>
 
-<%= render "devise/shared/links" %>
+<center> <%= render "devise/shared/links" %> </center>

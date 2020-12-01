@@ -42,19 +42,26 @@
   color: black;
 }
 
-
 .tag-button {
   width: 24vw;
   height: 8vw;
   background-color: black; /* Green */
   border: 2px solid #F3DD11;
   color: #F3DD11;
+
+.show-card-button {
+  width: 160px;
+  height: 45px;
+  background-color: black;
+  border: 2px solid #F3DD11;
   padding: 8px 13px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
-}
+  font-size: 18px;
+  align-self: center;
+  color: #F3DD11;
+ }
 
 .selected-tags {
   width: auto;
@@ -84,16 +91,4 @@
 .tag-reveal {
   visibility: visible;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -3,8 +3,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     # seeds articles to database based on user's topic preferences
     # and max read time (currently 2nd argument in CnnArticles.new)
-    time = params[:time].to_i || 10
-    # CnnArticles.new(@user, time)
+    time = params[:time] || 10
     @articles = Article.joins(:tags).where("read_mins < ?", time)#.where(tags: {id: current_user.tags})
     # get all user's selected topics
     # @topics = @user.topics.all
@@ -22,6 +21,8 @@ class DashboardsController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
+    @existing_like = Like.find_by(user: current_user, article: @article)
   end
 
   def setup
