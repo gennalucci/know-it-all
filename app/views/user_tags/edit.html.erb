@@ -2,10 +2,11 @@
 <br>
 <div class="container">
 <br>
+
 <div class = "container">
     <div class="d-flex justify-content-center">
       <div id="topic-tag-container">
-        <h2>add your tags</h2>
+        <h3>reading preferences</h3>
         <br>
 
         <% @topics.each do |topic| %>
@@ -37,6 +38,7 @@
       </div>
     </div>
     <br>
+<%= link_to "Sign Out", destroy_user_session_path, class: "button ml-auto", id: "btn-account", method: :delete %>
 </div>
 <br>
 <br>

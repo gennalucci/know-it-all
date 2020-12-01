@@ -1,6 +1,6 @@
 .button {
   background-color: black; /* Green */
-  border: 2px solid #F3DD11;
+  border: 1px solid #F3DD11;
   color: #F3DD11;
   padding: 8px 13px;
   text-align: center;
@@ -25,16 +25,18 @@
 }
 
 .topic-button {
-  width: 20vw;
-  height: 20vw;
+  width: 155px;
+  height: 155px;
+  margin-left: 6px;
+  margin-bottom: 6px;
   background-color: black; /* Green */
-  border: 2px solid #F3DD11;
+  border: 1px solid #F3DD11;
   color: #F3DD11;
   padding: 8px 13px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .topic-button:hover {
@@ -43,32 +45,46 @@
 }
 
 .tag-button {
-  width: 24vw;
-  height: 8vw;
+  width: auto;
+  padding: 4px 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
   background-color: black; /* Green */
-  border: 2px solid #F3DD11;
+  border: 1px solid #F3DD11;
   color: #F3DD11;
 }
 
 .show-card-button {
-  width: 160px;
-  height: 45px;
-  background-color: black;
+  width: 100%;
   border: 2px solid #F3DD11;
-  padding: 8px 13px;
+  padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  align-self: center;
   color: #F3DD11;
+  margin: 0 auto;
+  max-width: 190px;
+
+ }
+
+ .show-card-button p {
+   padding: 0px;
  }
 
 .selected-tags {
-  width: auto;
-  height: 200px;
+  width: 100%;
+  height: auto;
+  min-height: 35px;
+  padding-top: 8px;
+  padding-left: 8px;
   border: 1px solid #F3DD11;
   background-color: black;
+}
+
+.selected-tags .tag-button {
+  background-color: #F3DD11;
+  color: black;
 }
 
 .tag-button:hover {
@@ -77,6 +93,7 @@
 }
 
 #btn-next {
+  width: 100%;
   background-color: #f3dd11; /* Green */
   color: black;
   text-align: center;
