@@ -46,7 +46,7 @@ topics = Topic.create!([{ name: "technology" }, { name: "sports" }, { name: "pol
 
 tags = Tag.create!([{ name: "programming", topic_id: 1 }, { name: "start-ups", topic_id: 1 }, { name: "basketball", topic_id: 2 }, { name: "football", topic_id: 2 }, { name: "american", topic_id: 3 }, { name: "covid-19", topic_id: 3 }, { name: "retail", topic_id: 4 }])
 
-article_tags = ArticleTag.create!([{article_id: 1, tag_id: 5 }, {article_id: 2, tag_id: 6 }, {article_id: 3, tag_id: 6 }, {article_id: 4, tag_id: 7 }, {article_id: 5, tag_id: 3 }])
+# article_tags = ArticleTag.create!([{article_id: 1, tag_id: 5 }, {article_id: 2, tag_id: 6 }, {article_id: 3, tag_id: 6 }, {article_id: 4, tag_id: 7 }, {article_id: 5, tag_id: 3 }])
 
 # For testing CNN articles
 

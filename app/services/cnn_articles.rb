@@ -33,7 +33,7 @@ class CnnArticles
           title: title, content_preview: content_preview_cleaned, article_url: article_url, read_mins: read_mins, source: @source, image_url: image_url
         }
         # p article_hash
-        
+
         article =  Article.create(article_hash)
 
         if article.persisted?
@@ -48,12 +48,12 @@ class CnnArticles
   private
   def tag_rss_url_lookup
     {
-      "Companies" => "http://rss.cnn.com/rss/money_news_companies.rss",
-      "International" => "http://rss.cnn.com/rss/money_news_international.rss",
-      "Financial" => "http://rss.cnn.com/rss/money_latest.rss",
-      "Health" => "http://rss.cnn.com/rss/cnn_health.rss",
-      "Entertainment" => "http://rss.cnn.com/rss/cnn_showbiz.rss",
-      "Travel" => "http://rss.cnn.com/rss/cnn_travel.rss",
+      "companies" => "http://rss.cnn.com/rss/money_news_companies.rss",
+      "international" => "http://rss.cnn.com/rss/money_news_international.rss",
+      "financial" => "http://rss.cnn.com/rss/money_latest.rss",
+      "health" => "http://rss.cnn.com/rss/cnn_health.rss",
+      "entertainment" => "http://rss.cnn.com/rss/cnn_showbiz.rss",
+      "travel" => "http://rss.cnn.com/rss/cnn_travel.rss",
     }
     # "http://rss.cnn.com/rss/money_topstories.rss",
     # "http://rss.cnn.com/rss/money_mostpopular.rss",
