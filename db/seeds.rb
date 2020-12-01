@@ -42,20 +42,20 @@ users = User.create!([{ email: "gennabartolucci@gmail.com", password:"Hello123",
 # likes =
 # user_topics =
 
-topics = Topic.create!([{ name: "Technology" }, { name: "Sports" }, { name: "Politics" }, { name: "Business" }, { name: "Culture" }, { name: "Lifestyle" }])
+topics = Topic.create!([{ name: "technology" }, { name: "sports" }, { name: "politics" }, { name: "business" }, { name: "culture" }, { name: "lifestyle" }])
 
-tags = Tag.create!([{ name: "Programming", topic_id: 1 }, { name: "Start-ups", topic_id: 1 }, { name: "Basketball", topic_id: 2 }, { name: "Football", topic_id: 2 }, { name: "American", topic_id: 3 }, { name: "Covid-19", topic_id: 3 }, { name: "Retail", topic_id: 4 }])
+tags = Tag.create!([{ name: "programming", topic_id: 1 }, { name: "start-ups", topic_id: 1 }, { name: "basketball", topic_id: 2 }, { name: "football", topic_id: 2 }, { name: "american", topic_id: 3 }, { name: "covid-19", topic_id: 3 }, { name: "retail", topic_id: 4 }])
 
 article_tags = ArticleTag.create!([{article_id: 1, tag_id: 5 }, {article_id: 2, tag_id: 6 }, {article_id: 3, tag_id: 6 }, {article_id: 4, tag_id: 7 }, {article_id: 5, tag_id: 3 }])
 
 # For testing CNN articles
 
-tag_company = Tag.create!({ name: 'Companies', topic_id: 4 })
-tag_int = Tag.create!({ name: 'International', topic_id: 4 })
-Tag.create!({ name: 'Financial', topic_id: 4 })
-Tag.create!({ name: 'Health', topic_id: 6 })
-Tag.create!({ name: 'Entertainment', topic_id: 6 })
-Tag.create!({ name: 'Travel', topic_id: 5 })
+tag_company = Tag.create!({ name: 'companies', topic_id: 4 })
+tag_int = Tag.create!({ name: 'international', topic_id: 4 })
+Tag.create!({ name: 'financial', topic_id: 4 })
+Tag.create!({ name: 'health', topic_id: 6 })
+Tag.create!({ name: 'entertainment', topic_id: 6 })
+Tag.create!({ name: 'travel', topic_id: 5 })
 
 UserTag.create!(tag: tag_company, user_id: 1 )
 UserTag.create!(tag: tag_int, user_id: 1 )

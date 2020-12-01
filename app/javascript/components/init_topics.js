@@ -1,12 +1,31 @@
+const initUnselectAlreadySelectedTags = () => {
+  const alreadySelectedTags = document.querySelectorAll(".selected-tags > .tag-button");
+  alreadySelectedTags.forEach((tag) => {
+    tag.addEventListener("click", (e) => {
+      const tagId = tag.dataset.elementId;
+      const tagOnTop = document.querySelector(`.unselected-tags .tag-button[data-element-id='${tagId}']`);
+      tag.remove();
+      tagOnTop.classList.remove("tag-hidden");
+      tagOnTop.classList.remove("selected");
+    });
+  });
+};
+
 const buildHtml = ((element, tagContainer) => {
   const tagId = element.dataset.elementId;
   const newButton = `<button class="tag-button selected-tag topic-tag-button" data-element-id="${tagId}" data-element="tag">${element.innerText}</button>`;
   tagContainer.insertAdjacentHTML('beforeend', newButton);
   element.classList.add("tag-hidden");
+  const newButtonElement = tagContainer.querySelector(`[data-element-id='${tagId}'`);
+  newButtonElement.addEventListener("click", (e) => {
+    newButtonElement.remove();
+    element.classList.remove("tag-hidden");
+    element.classList.remove("selected");
+  })
 });
 const selectTags = (wrappers) => {
   wrappers.forEach((wrapper) => {
-    const buttons = wrapper.querySelectorAll(".topic-tag-button");
+    const buttons = wrapper.querySelectorAll(".unselected-tags .topic-tag-button");
     const wrapperName = wrapper.dataset.topicWrapper;
     const tagContainer = wrapper.querySelectorAll(`[data-topic-tags='${wrapperName}']`);
     buttons.forEach((button) => {
@@ -25,6 +44,7 @@ const selectTopics = (elements) => {
   })
 };
 const initTopics = () => {
+  initUnselectAlreadySelectedTags();
   const topicTagContainer = document.getElementById("topic-tag-container");
   if (topicTagContainer){
     const url = window.location.origin;
