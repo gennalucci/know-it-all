@@ -11,6 +11,16 @@ class DashboardsController < ApplicationController
     # @tags = @topics.map do |topic|
     #   topic.tags.all
     # end
+    @topics = @user.user_tags.map { |user_tag| user_tag.tag.topic }.uniq
+
+    @filtered_articles_hash = {}
+
+    @topics.each do |topic|
+      articles = Article.filter_articles_by_topic(topic)
+      # @articles = article.joins(:tags).where("read_mins < ?", time)
+      @filtered_articles_hash[topic.name] = articles
+    end
+    # raise
   end
 
   def time
@@ -31,5 +41,8 @@ class DashboardsController < ApplicationController
   end
 
   def likes
+    @user = current_user
+    @likes = @user.likes
   end
+
 end
