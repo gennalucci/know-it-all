@@ -12,7 +12,7 @@ class DashboardsController < ApplicationController
     #   topic.tags.all
     # end
     @topics = @user.user_tags.map { |user_tag| user_tag.tag.topic }.uniq
-  raise
+  # raise
   end
 
   def time
