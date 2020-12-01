@@ -48,19 +48,24 @@
   background-color: black; /* Green */
   border: 2px solid #F3DD11;
   color: #F3DD11;
+}
 
 .show-card-button {
-  width: 160px;
-  height: 45px;
-  background-color: black;
+  width: 100%;
   border: 2px solid #F3DD11;
-  padding: 8px 13px;
+  padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  align-self: center;
   color: #F3DD11;
+  margin: 0 auto;
+  max-width: 190px;
+
+ }
+
+ .show-card-button p {
+   padding: 0px;
  }
 
 .selected-tags {
