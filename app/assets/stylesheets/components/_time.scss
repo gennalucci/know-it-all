@@ -2,7 +2,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%; /* Width of the outside container */
+  width: 100%; /* Width of the outside container */
 }
 
 /* The slider itself */
@@ -10,7 +10,7 @@
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
-  height: 25px; /* Specified height */
+  height: 4px; /* Specified height */
   background: white; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -29,13 +29,22 @@
   appearance: none;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: yellow; /* Green background */
+  border-radius: 50%;
+  background: #F3DD11; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: yellow; /* Green background */
+  border-radius: 50%;
+  background: #F3DD11; /* Green background */
   cursor: pointer; /* Cursor on hover */
+}
+
+.btn-slider {
+  width: 100%;
+  background-color: black;
+  border: 1px solid #F3DD11;
+  color: #F3DD11;
 }
