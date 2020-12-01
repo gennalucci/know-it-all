@@ -11,6 +11,8 @@ class DashboardsController < ApplicationController
     # @tags = @topics.map do |topic|
     #   topic.tags.all
     # end
+    @topics = @user.user_tags.map { |user_tag| user_tag.tag.topic }.uniq
+  raise
   end
 
   def time
