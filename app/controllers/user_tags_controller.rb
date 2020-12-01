@@ -6,11 +6,17 @@ class UserTagsController < ApplicationController
   end
 
   def create_tags
+    current_user.user_tags.destroy_all
     tag_ids = params[:elementIds].split(',')
     tag_ids.each do |id|
-      UserTag.create!(user_id: current_user.id, tag_id: id.to_i)
+      UserTag.create(user_id: current_user.id, tag_id: id.to_i)
     end
     redirect_to time_path
+  end
+
+  def edit
+    @user_tag = UserTag.new
+    @topics = Topic.all
   end
 
   def destroy
