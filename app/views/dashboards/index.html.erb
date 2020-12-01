@@ -1,11 +1,12 @@
 <h1>Dashboards</h1>
-<% @topics.each do |topic| %>
+<% @filtered_articles_hash.each do |topic, articles| %>
   <div class="headuh ml-2">
-    <p><%= topic.name %></p>
+    <p><%= topic %></p>
+    <p><%= articles.count %></p>
   </div>
   <br>
   <div class="cards">
-    <% @articles.first(4).each do |article| %>
+    <% articles.each do |article| %>
       <% if article.image_url %>
         <div class="card">
           <div class="article_image">
