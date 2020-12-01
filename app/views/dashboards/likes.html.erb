@@ -1,26 +1,18 @@
-<div class="show-card">
-  <div class="show-card-image">
-    <img src="https://im-media.voltron.voanews.com/Drupal/01live-166/styles/sourced/s3/2020-01/ap_iran_flag.jpg?itok=EF1Vni7y">
-  </div>
-    <div class="show-card-content">
-      <div class="show-card-header">
-        <p> __________________________ </p>
+<div class="page ml-2"><p> likes </p></div>
+<p> your latest intake of news </p>
+<div class="cards">
+  <% @likes.each do |like| %>
+    <div class="card">
+      <div class="article_image">
+        <%= image_tag(like.article.image_url) %>
       </div>
-      <div class="show-card-headline">
-        <p> Hardliners in the U.S. and Iran Are Each Other’s Best Friend </p>
+      <div class="overlay"></div>
+      <div class="read-time">
+        <p><%= like.article.read_mins  %>mins</p>
       </div>
-      <div class="show-card-sources">
-      <p> Pankaj Mishra - Bloomberg </p>
-      </div>
-      <br>
-        <div class="show-card-description">
-          <p> The killing of Qassem Soleimani, commander of the elite Quds force of Iran’s Islamic Revolutionary Guard Corps, in Baghdad takes to a new extreme Donald Trump’s policy of “maximum pressure” on Iran.</p>
-        </div>
-         <div class="show-card-button">
-          <p> Read more </p>
-        </div>
+      <div class="headline">
+        <%= link_to "#{like.article.title}", article_show_path(like.article)%>
       </div>
     </div>
-
-
-
+  <%end%>
+</div>

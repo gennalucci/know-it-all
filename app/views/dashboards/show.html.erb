@@ -9,7 +9,7 @@
       <div class="show-card-headline">
         <p><%= @article.title %></p>
         <p><% if @existing_like %>
-          <%= link_to "   ❤️",  unlike_article_path(@article), method: :delete, class: "btn-likes" %>
+          <%= link_to "   ♥️",  unlike_article_path(@article), method: :delete, class: "btn-likes" %>
         <% else %>
           <%= link_to "   🤍", like_article_path(@article), method: :post, class: "btn-likes" %>
         <% end %>

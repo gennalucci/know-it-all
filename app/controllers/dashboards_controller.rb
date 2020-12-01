@@ -41,5 +41,8 @@ class DashboardsController < ApplicationController
   end
 
   def likes
+    @user = current_user
+    @likes = @user.likes
   end
+
 end
