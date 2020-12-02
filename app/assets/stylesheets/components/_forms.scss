@@ -1,0 +1,39 @@
+.styling {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    width: calc(100% - 80px);
+    color: white;
+}
+
+
+.form-control:focus {
+    color: white;
+    background-color: transparent;
+    border-color: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-control {
+    color: white;
+    background-color: transparent;
+    border: none!important;
+    border-color: none;
+    border-bottom: 1px solid white!important;
+    outline: none;
+    box-shadow: none;
+    label {
+      text-align: left;
+    }
+}
+
+// .styling-input {
+//   background-color: transparent!important;
+//   border-bottom: red;
+// }
+
+// input:-internal-autofill-selected {
+//   background-color: transparent!important;
+//   border-bottom: red;
+// }
