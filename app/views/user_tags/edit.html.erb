@@ -1,45 +1,41 @@
-<br>
-<br>
-<div class="container">
-<br>
 
-<div class = "container">
-    <div class="d-flex justify-content-center">
-      <div id="topic-tag-container">
-        <h3>reading preferences</h3>
+<div class = "ml-2 container edit-container" style="margin-top:20px;">
+  <div class="signout-container">
+    <%= link_to "Sign Out", destroy_user_session_path, id: "btn-account", method: :delete %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div id="topic-tag-container" style="padding-top:50px;">
+      <h3>reading preferences</h3>
+      <br>
+
+      <% @topics.each do |topic| %>
+        <h4><%= topic.name %></h4>
         <br>
-
-        <% @topics.each do |topic| %>
-          <h4><%= topic.name %></h4>
-          <br>
-          <div data-topic-wrapper="<%= topic.name %>">
-            <div class="unselected-tags">
-              <% topic.tags.each do |tag| %>
-                <% if UserTag.find_by(user: current_user, tag: tag) %>
-                  <button class="tag-button topic-tag-button tag-hidden selected" data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></button>
-                <% else  %>
-                  <button class="tag-button topic-tag-button" data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></button>
-                <% end %>
+        <div data-topic-wrapper="<%= topic.name %>">
+          <div class="unselected-tags">
+            <% topic.tags.each do |tag| %>
+              <% if UserTag.find_by(user: current_user, tag: tag) %>
+                <button class="tag-button topic-tag-button tag-hidden selected" data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></button>
+              <% else  %>
+                <button class="tag-button topic-tag-button" data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></button>
               <% end %>
-            </div>
-            <div class="selected-tags" data-topic-tags="<%= topic.name %>">
-              <% current_user.tags.where(topic: topic).each do |tag| %>
-                <button class="tag-button selected-tag topic-tag-button" data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></button>
-              <% end %>
-            </div>
+            <% end %>
           </div>
-
-          <br>
-          <br>
-        <% end %>
-
-          <button class="button btn" id="btn-next"><strong>next</strong></button>
+          <div class="selected-tags" data-topic-tags="<%= topic.name %>">
+            <% current_user.tags.where(topic: topic).each do |tag| %>
+              <button class="tag-button selected-tag topic-tag-button" data-element-id="<%= tag.id %>" data-element="tag"><%= tag.name %></button>
+            <% end %>
+          </div>
+        </div>
         <br>
-      </div>
+        <br>
+      <% end %>
+
+        <button class="button btn" id="btn-next"><strong>next</strong></button>
+      <br>
     </div>
+  </div>
     <br>
-<%= link_to "Sign Out", destroy_user_session_path, class: "button ml-auto", id: "btn-account", method: :delete %>
 </div>
-<br>
 <br>
 <br>

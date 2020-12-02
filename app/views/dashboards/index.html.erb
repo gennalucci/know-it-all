@@ -1,17 +1,25 @@
-<div class="page ml-2"><p> Dashboard </p></div>
-  <p> your latest intake of news </p>
+<h3 class="ml-2" style="margin-top:15px;">articles</h3>
+<br>
   <% @filtered_articles_hash.each do |topic, articles| %>
-  <% unless articles.empty? %>
-  <div class="headuh ml-2">
-    <p><%= topic %></p>
-  </div>
-  <br>
-  <div class="cards">
-    <% articles.first(4).each do |article| %>
-      <% article.image_url %>
-        <div class="card">
-          <div class="article_image">
-            <%= image_tag(article&.image_url) %>
+    <% unless articles.empty? %>
+      <div class="headuh ml-2">
+        <p><%= topic %></p>
+      </div>
+      <br>
+      <div class="cards">
+      <% articles.first(4).each do |article| %>
+        <% article.image_url %>
+          <div class="card">
+            <div class="article_image">
+              <%= image_tag(article&.image_url) %>
+            </div>
+            <div class="overlay"></div>
+            <div class="read-time">
+              <p><%= article.read_mins  %>mins</p>
+            </div>
+            <div class="headline">
+                <%= link_to "#{article.title}", article_show_path(article)%>
+            </div>
           </div>
           <div class="overlay"></div>
           <div class="read-time">
@@ -29,5 +37,8 @@
         </div>
       <%end%>
      </div>
+          <br>
+          <br>
     <%end%>
-   <%end%>
+  <%end%>
+<%= render 'shared/navbar' %>
