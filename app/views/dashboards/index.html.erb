@@ -21,6 +21,20 @@
                 <%= link_to "#{article.title}", article_show_path(article)%>
             </div>
           </div>
+          <div class="overlay"></div>
+          <div class="read-time">
+            <p>
+              <% if article.read_mins < 1  %>
+                < 1 min
+              <% else %>
+                <%= article.read_mins  %> mins
+              <% end %>
+            </p>
+          </div>
+          <div class="headline">
+              <%= link_to "#{article.title}", article_show_path(article)%>
+          </div>
+        </div>
       <%end%>
      </div>
           <br>
