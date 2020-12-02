@@ -23,6 +23,7 @@ class CnnArticles
       article_url = doc.xpath("//item[#{i+1}]/link").text
       # image_url = doc.xpath("//item[#{i+1}]/media:thumbnail").first&.attributes&.[]("url")&.value
 
+
       begin
         html = open(article_url)
         words_per_min = 200
