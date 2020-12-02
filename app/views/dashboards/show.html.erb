@@ -9,9 +9,9 @@
           <p><%= @article.title %></p>
           <div class="show-card-details">
             <p><% if @existing_like %>
-                <%= link_to "   ❤️♥️",  unlike_article_path(@article), method: :delete, class: "btn-likes" %>
+                <%= link_to "   ♥️",  unlike_article_path(@article), method: :delete, class: "btn-likes" %>
                 <% else %>
-                <%= link_to "   🤍🤍", like_article_path(@article), method: :post, class: "btn-likes" %>
+                <%= link_to "   🤍", like_article_path(@article), method: :post, class: "btn-likes" %>
                 <% end %>
                 <span id="likes-count"><%= @article.likes.count %></span>
             </p>
@@ -26,9 +26,11 @@
     </div>
   </div>
 </div>
+<br>
   <div class="show-card-footer">
     <div class="show-card-button">
-      <span><%= link_to "Read the full article", @article.article_url, target: :_blank %></span>
+      <span><%= link_to "Continue reading", @article.article_url, target: :_blank %></span>
     </div>
   </div>
   <%= render 'shared/navbar' %>
+

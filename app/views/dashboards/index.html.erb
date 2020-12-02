@@ -1,5 +1,8 @@
+
+
 <h3 class="ml-2" style="margin-top:15px;">articles</h3>
 <br>
+<div class="card-topic-container" data-controller='articles'>
   <% @filtered_articles_hash.each do |topic, articles| %>
     <% unless articles.empty? %>
       <div class="headuh ml-2">
@@ -7,30 +10,19 @@
       </div>
       <br>
       <div class="cards">
-      <% articles.first(4).each do |article| %>
-        <% article.image_url %>
-          <div class="card">
-            <div class="article_image">
-              <%= image_tag(article&.image_url) %>
-            </div>
-            <div class="overlay"></div>
-            <div class="read-time">
-            <p>
-              <% if article.read_mins < 1  %>
-                < 1 min
-              <% else %>
-                <%= article.read_mins  %> mins
-              <% end %>
-            </p>
-          </div>
-          <div class="headline">
-              <%= link_to "#{article.title}", article_show_path(article)%>
-          </div>
-        </div>
-      <%end%>
-     </div>
-          <br>
-          <br>
+
+        <% articles.first(4).each do |article| %>
+          <%= render "article_card", article: article %>
+        <%end%>
+        <%=link_to 'See More',
+                    '#',
+                    remote: true,
+                    'data-action' => 'click->articles#seeMore',
+                    'data-topic' => topic
+        %>
+      </div>
     <%end%>
   <%end%>
+</div>
 <%= render 'shared/navbar' %>
+
