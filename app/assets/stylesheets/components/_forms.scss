@@ -6,7 +6,6 @@
     color: white;
 }
 
-
 .form-control:focus {
     color: white;
     background-color: transparent;
@@ -26,6 +25,10 @@
     label {
       text-align: left;
     }
+}
+
+.form-group {
+  margin-bottom: 0px;
 }
 
 // .styling-input {
