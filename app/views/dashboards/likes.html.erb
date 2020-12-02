@@ -1,5 +1,5 @@
-<div class="page ml-2"><p> likes </p></div>
-<p> your latest intake of news </p>
+<h3 class="ml-2" style="margin-top:15px;">likes</h3>
+<br>
 <div class="cards">
   <% @likes.each do |like| %>
     <div class="card">
@@ -16,3 +16,4 @@
     </div>
   <%end%>
 </div>
+<%= render 'shared/navbar' %>

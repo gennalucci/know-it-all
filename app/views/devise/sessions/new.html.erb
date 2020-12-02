@@ -1,30 +1,35 @@
-<center><div class="registration">
-<div class="image">
-  <img src="https://pixy.org/src2/594/5942756.png">
-</div>
 
-</div>
-</center>
-<center> <h2><b>KNOW IT ALL</b></h2> </center>
-
-<center> <div class="container">
- <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div class="container">
+    <center>
+      <img src="https://pixy.org/src2/594/5942756.png" style="width:280px;height:280px;">
+    </center>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "button" %>
+<center><h2 style="margin-top: 24px;"><b>KNOW IT ALL</b></h2></center>
+
+<center>
+  <div class="container">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs" style="margin-top: 24px;">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: false,
+                    autocomplete: false,
+                    input_html: { class: "styling-input" },
+                    wrapper_html: { class: "styling" } %>
+        <%= f.input :password,
+                    required: false,
+                    wrapper_html: { class: "styling" },
+                    input_html: { class: "styling-input" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions" style="margin-top:60px;">
+        <%= f.button :submit, "Sign In", class: "button" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
-</div>
 </center>
 
-<center> <%= render "devise/shared/links" %> </center>
+<center><%= render "devise/shared/links" %></center>
+

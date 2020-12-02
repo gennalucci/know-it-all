@@ -1,6 +1,7 @@
 .button {
+  width: calc(100% - 80px);
   background-color: black; /* Green */
-  border: 1px solid #F3DD11;
+  border: 2px solid #F3DD11;
   color: #F3DD11;
   padding: 8px 13px;
   text-align: center;
@@ -110,17 +111,7 @@
   visibility: visible;
 }
 
+
 .card-hidden {
   display: none;
 }
-
-
-
-
-
-
-
-
-
-
-

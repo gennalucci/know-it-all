@@ -1,7 +1,7 @@
-<div class="page ml-2"><p> Dashboard </p></div>
 
-<p> your latest intake of news </p>
 
+<h3 class="ml-2" style="margin-top:15px;">articles</h3>
+<br>
 <div class="card-topic-container" data-controller='articles'>
   <% @filtered_articles_hash.each do |topic, articles| %>
     <% unless articles.empty? %>
@@ -10,6 +10,7 @@
       </div>
       <br>
       <div class="cards">
+
         <% articles.first(4).each do |article| %>
           <%= render "article_card", article: article %>
         <%end%>
@@ -23,17 +24,5 @@
     <%end%>
   <%end%>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<%= render 'shared/navbar' %>
 
