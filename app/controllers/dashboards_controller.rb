@@ -20,7 +20,7 @@ class DashboardsController < ApplicationController
       # @articles = article.joins(:tags).where("read_mins < ?", time)
       @filtered_articles_hash[topic.name] = articles
     end
-    # raise
+    raise if params[:show_all]
   end
 
   def time
