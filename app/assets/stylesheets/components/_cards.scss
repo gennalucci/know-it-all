@@ -3,7 +3,7 @@
   flex-direction: row;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 50px;
 }
 
@@ -25,10 +25,12 @@
 }
 
 .card .headline {
+  max-width: 80%;
   text-align: center-left;
   font-family: 'Raleway';
   color: white;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: bold;
   position: absolute;
   bottom: 0px;
   left: 1px;
@@ -38,10 +40,11 @@
 .card .read-time {
   font-family: 'Raleway';
   color: yellow;
-  font-size: 15px;
+  font-size: 17px;
   position: absolute;
-  top: 0px;
-  left: 2px;
+  font-weight: bold;
+  bottom: -12px;
+  right: 2px;
 }
 
 .card .article_image {
@@ -59,10 +62,11 @@
 }
 
 .overlay {
+  top: 135px;
   width: 100%;
-  height: 202px;
-  background: linear-gradient(#0002, black);
-  opacity: .6;
+  height: 33%;
+  background: (black);
+  opacity: .8;
   position: absolute;
 }
 
@@ -78,4 +82,5 @@ a:hover {
   background-color: transparent;
   text-decoration: none;
 }
+
 
