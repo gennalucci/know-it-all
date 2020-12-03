@@ -1,6 +1,10 @@
-<h3 class="ml-2" style="margin-top:15px;">likes</h3>
-<br>
-<div class="cards">
+<div class="svg-line-likes">
+  <svg class="svg-likes" width="100" height="1" viewBox="0 0 80 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <line y1="0.5" x2="100" y2="0.5" stroke="#F3DD11"/>
+  </svg>
+  <h3 class="title">favorites</h3>
+</div>
+<div class="cards" style="margin-top: 30px;">
   <% @likes.each do |like| %>
     <div class="card">
       <div class="article_image">
