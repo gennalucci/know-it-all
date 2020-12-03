@@ -28,7 +28,7 @@ export default class extends Controller {
         container.insertAdjacentHTML('beforeEnd', article);
       });
       link.remove();
-      const seeLessLink = `<a class="" data-action="articles#seeLess" data-topic="${topic}"> see less </a>`;
+      const seeLessLink = `<a class="button-see-more" data-action="articles#seeLess" data-topic="${topic}"> see less </a>`;
 
       container.insertAdjacentHTML("beforeEnd", seeLessLink);
     });
@@ -48,7 +48,7 @@ export default class extends Controller {
     const text = event.currentTarget.innerText;
 
     if (text === "see less") {
-      event.currentTarget.innerText = "See More";
+      event.currentTarget.innerText = "see more";
     } else {
       event.currentTarget.innerText = "see less";
     }
