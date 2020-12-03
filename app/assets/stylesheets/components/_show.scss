@@ -120,6 +120,10 @@
     font-family: 'Raleway';
     font-size: 18px;
     color: white;
+    p {
+      height: 157px;
+      overflow-y: hidden;
+    }
 
   }
 }
@@ -136,4 +140,8 @@
     width: 100%;
     color: #F3DD11;
     font-size: 25px;
+  }
+
+  .show-card-likes {
+    min-width: 50px;
   }
