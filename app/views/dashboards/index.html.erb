@@ -7,26 +7,28 @@
 </div>
 <h3 class="ml-2" style="margin-top:15px;">articles</h3>
 <br>
-<div class="card-topic-container" data-controller='articles'>
-  <% @filtered_articles_hash.each do |topic, articles| %>
-    <% unless articles.empty? %>
-      <div class="headuh ml-2">
-        <p><%= topic %></p>
-      </div>
-      <br>
-      <div class="cards">
-        <% articles.first(4).each do |article| %>
-          <%= render "article_card", article: article %>
-        <%end%>
-        <%=link_to 'see more',
-                  '#',
-                  remote: true,
-                  'data-action' => 'click->articles#seeMore',
-                  'data-topic' => topic,
-                  class: "button-see-more"
-        %>
-      </div>
+<div class="container">
+  <div class="card-topic-container" data-controller='articles'>
+    <% @filtered_articles_hash.each do |topic, articles| %>
+      <% unless articles.empty? %>
+        <div class="headuh ml-2">
+          <p><%= topic %></p>
+        </div>
+        <br>
+        <div class="cards">
+          <% articles.first(4).each do |article| %>
+            <%= render "article_card", article: article %>
+          <%end%>
+          <%=link_to 'see more',
+                    '#',
+                    remote: true,
+                    'data-action' => 'click->articles#seeMore',
+                    'data-topic' => topic,
+                    class: "button-see-more"
+          %>
+        </div>
+      <%end%>
     <%end%>
-  <%end%>
+</div>
 <%= render 'shared/navbar' %>
 
