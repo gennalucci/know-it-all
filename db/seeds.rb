@@ -23,7 +23,7 @@ tables.each do |table|
 end
 
 sources = [{ name: 'The Washington Post', api_url: "www.placeholder.com" }, { name: 'The New York Times', api_url: "www.placeholder.com" }, { name: 'CNN', api_url: "www.placeholder.com" },
-{ name: 'Business Insider', api_url: "www.placeholder.com" }, { name: 'ESPN', api_url: "www.placeholder.com" }, { name: 'TechCrunch', api_url: "www.placeholder.com" }, { name: 'BBC', api_url: "www.placeholder.com" }, { name: 'The Huffington Post', api_url: "www.placeholder.com" },
+{ name: 'Business Insider', api_url: "www.placeholder.com" }, { name: 'ESPN', api_url: "www.placeholder.com" }, { name: 'TechCrunch', api_url: "www.placeholder.com" }, { name: 'BBC', api_url: "www.placeholder.com" }, { name: 'Huffington Post', api_url: "www.placeholder.com" },
 { name: 'The Guardian', api_url: "www.placeholder.com" }, { name: 'CNET', api_url: "www.placeholder.com" }]
 
 sources.each do |source|

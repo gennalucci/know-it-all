@@ -8,14 +8,14 @@
         <div class="show-card-headline">
           <p><%= @article.title %></p>
           <div class="show-card-details">
-            <p><% if @existing_like %>
-                <%= link_to "   ♥️",  unlike_article_path(@article), method: :delete, class: "btn-likes" %>
+            <p class="show-card-likes"><% if @existing_like %>
+                <%= link_to image_tag("bi_suit-heart-fill.svg"),  unlike_article_path(@article), method: :delete, remote: true, class: "btn-likes" %>
                 <% else %>
-                <%= link_to "   🤍", like_article_path(@article), method: :post, class: "btn-likes" %>
+                <%= link_to image_tag("bi_suit-heart.svg"), like_article_path(@article), method: :post, remote: true, class: "btn-likes" %>
                 <% end %>
                 <span id="likes-count"><%= @article.likes.count %></span>
             </p>
-            <p>Source: <%= @article.source.name %></p>
+            <p><%= @article.source.name %></p>
             <p><%= @article.read_mins  %> minute read</p>
           </div>
 
@@ -29,7 +29,7 @@
 <br>
   <div class="show-card-footer">
     <div class="show-card-button">
-      <span><%= link_to "Continue reading", @article.article_url, target: :_blank %></span>
+      <span><%= link_to "Continue Reading", @article.article_url, target: :_blank %></span>
     </div>
   </div>
 </div>
