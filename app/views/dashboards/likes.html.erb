@@ -15,7 +15,11 @@
         <p><%= like.article.read_mins  %>mins</p>
       </div>
       <div class="headline">
-        <%= link_to "#{like.article.title}", article_show_path(like.article)%>
+        <% if like.article.title.length > 2 %>
+          <%= link_to truncate("#{like.article.title}", length: 50), article_show_path(like.article)%>
+        <% else %>
+          <%= like.article.title %>
+        <% end %>
       </div>
     </div>
   <%end%>
