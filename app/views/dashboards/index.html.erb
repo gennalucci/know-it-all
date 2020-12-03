@@ -10,19 +10,18 @@
       </div>
       <br>
       <div class="cards">
-
         <% articles.first(4).each do |article| %>
           <%= render "article_card", article: article %>
         <%end%>
-        <%=link_to 'See More',
-                    '#',
-                    remote: true,
-                    'data-action' => 'click->articles#seeMore',
-                    'data-topic' => topic
+        <%=link_to 'see more',
+                  '#',
+                  remote: true,
+                  'data-action' => 'click->articles#seeMore',
+                  'data-topic' => topic,
+                  class: "button-see-more"
         %>
       </div>
     <%end%>
   <%end%>
-</div>
 <%= render 'shared/navbar' %>
 
