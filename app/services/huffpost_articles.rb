@@ -2,7 +2,7 @@ require 'open-uri'
 # Run anytime you want to seed the DB with articles for a user. Then you're ready to query the DB for the most recently created articles matching that user's read time and tags.
 class HuffpostArticles
   def initialize
-    @source = Source.find_by_name("The Huffington Post")
+    @source = Source.find_by_name("Huffington Post")
     Tag.all.each do |tag|
       rss_url = tag_rss_url_lookup[tag.name]
       if rss_url
