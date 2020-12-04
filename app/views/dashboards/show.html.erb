@@ -1,4 +1,8 @@
-<div class="show-card">
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@article.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @article.description %>
+<% content_for :meta_image, cl_image_path(@article.photo.path) %><div class="show-card">
+
   <div class="show-card-image">
     <img src="<%= @article.image_url %>">
   </div>
