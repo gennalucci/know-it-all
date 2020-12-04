@@ -5,7 +5,7 @@ body {
 }
 
 body#animation {
-  background: linear-gradient(-80deg, yellow, black, black, yellow);
+  background: linear-gradient(-80deg, #fff600, black, black, #fff600);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 @keyframes gradient {
@@ -20,3 +20,5 @@ body#animation {
   }
  }
 }
+
+
