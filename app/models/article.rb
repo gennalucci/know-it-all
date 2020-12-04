@@ -7,4 +7,5 @@ class Article < ApplicationRecord
 
   # scope :filter_articles_by_topic, ->(topic) { joins(:tags).where(tags: {topic_id: topic.id}) }
   scope :filter_articles_by_topic, ->(topic, time) { joins(:tags).where(tags: {topic_id: topic.id}).where("read_mins < ?", time) }
+  DEFAULT_META = YAML.load_file(Rails.root.join("config/meta.yml"))
 end
